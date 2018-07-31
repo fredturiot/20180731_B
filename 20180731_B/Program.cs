@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace _20180731_B
 {
@@ -10,6 +11,22 @@ namespace _20180731_B
     {
         static void Main(string[] args)
         {
+            //TP methode
+            Console.WriteLine("Entrez le premier prix brut");
+            decimal prixBrut = Convert.ToDecimal(Console.ReadLine());
+            CalculerPrixNet(prixBrut);
+            Console.WriteLine("Entrez le second prix brut");
+            prixBrut = Convert.ToDecimal(Console.ReadLine());
+            CalculerPrixNet(prixBrut);
+            Console.WriteLine("Entrez le dernier prix brut");
+            prixBrut = Convert.ToDecimal(Console.ReadLine());
+            CalculerPrixNet(prixBrut);
+
+            //autre version
+            Console.WriteLine($"prix ttc de l'article: {CalculerPrixNet(100)}euros");
+            Console.WriteLine($"prix ttc de l'article: {CalculerPrixNet(200)}euros");
+            Console.WriteLine($"prix ttc de l'article: {CalculerPrixNet(156)}euros");
+
             //exemple
             /*
             Console.WriteLine(Methode2(2));
@@ -21,6 +38,8 @@ namespace _20180731_B
             var age = PoserQuestion("quel est votre age");
 
             Console.WriteLine($"bonjour {prenom} {nom}, vous avez {age} ans.");
+
+            
         }
         
         // methode d'exemple
@@ -29,6 +48,7 @@ namespace _20180731_B
             return (age.ToString() + " ans.");
         }
 
+        
 
         static string PoserQuestion(string question)
         {
@@ -37,6 +57,16 @@ namespace _20180731_B
             Console.Clear();
 
             return saisie;
+        }
+
+        static decimal CalculerPrixNet(decimal prixBrut)
+        {
+            
+            decimal tva = 1.206m; //20.6%   m imperatif pour decimal
+            decimal prixNet = prixBrut * tva ;
+            Console.WriteLine("Le prix net est " + prixNet);
+            return prixNet;
+
         }
 
         
