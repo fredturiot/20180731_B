@@ -16,7 +16,10 @@ namespace _20180731_B
             string saisie2 = (Console.ReadLine());
             SaisirEntier(saisie2);
 
-            //var saisie = SaisirEntierCorrige(textAAfficher);
+            //CORRIGE?
+            //var textAAfficher = "Entrez un nombre";
+            var saisie3 = SaisirEntierCorrige("Entrez un nombre");
+            Console.WriteLine(saisie3);
 
 
 
@@ -108,7 +111,13 @@ namespace _20180731_B
         static int SaisirEntierCorrige(string textAAfficher)
         {
             Console.WriteLine(textAAfficher);
-            return int.Parse(Console.ReadLine());
+            
+            //return int.Parse(Console.ReadLine());
+            int i = int.Parse(Console.ReadLine());
+            i++; //on doit calculer avant d'afficher
+            return i;
+
+
         }
 
     }
