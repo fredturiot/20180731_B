@@ -11,22 +11,49 @@ namespace _20180731_B
     {
         static void Main(string[] args)
         {
+            //PARSE TP
+            Console.WriteLine("tapper un truc");
+            string saisie2 = (Console.ReadLine());
+            SaisirEntier(saisie2);
+
+            //var saisie = SaisirEntierCorrige(textAAfficher);
+
+
+
+            // PARSE DATE EXEMPLE
+            Console.WriteLine("date de naissance?");
+            var saisie = Console.ReadLine();
+            var dateDeNaissance = DateTime.Parse(saisie);
+
+            var ageCalcule = DateTime.Now.Subtract(dateDeNaissance).TotalDays / 365;
+            Console.WriteLine($"Age:{ageCalcule}");// MAJUSCULE A LINE!!!!!
+
+           
+
+
+
             //TP methode
             Console.WriteLine("Entrez le premier prix brut");
-            decimal prixBrut = Convert.ToDecimal(Console.ReadLine());
+            decimal prixBrut = Convert.ToDecimal(Console.ReadLine());//convertir en decimal l'entree string
             CalculerPrixNet(prixBrut);
             Console.WriteLine("Entrez le second prix brut");
             prixBrut = Convert.ToDecimal(Console.ReadLine());
             CalculerPrixNet(prixBrut);
-            Console.WriteLine("Entrez le dernier prix brut");
+            Console.WriteLine("Entrez le troisieme prix brut");
             prixBrut = Convert.ToDecimal(Console.ReadLine());
             CalculerPrixNet(prixBrut);
+            Console.WriteLine("Entrez le dernier prix brut");
+            prixBrut = Decimal.Parse(Console.ReadLine());// pareil que convert au dessus.
+            CalculerPrixNet(prixBrut);
+
+            Console.WriteLine("\n");
 
             //autre version
             Console.WriteLine($"prix ttc de l'article: {CalculerPrixNet(100)}euros");
             Console.WriteLine($"prix ttc de l'article: {CalculerPrixNet(200)}euros");
             Console.WriteLine($"prix ttc de l'article: {CalculerPrixNet(156)}euros");
 
+            Console.WriteLine("\n");
             //exemple
             /*
             Console.WriteLine(Methode2(2));
@@ -69,8 +96,20 @@ namespace _20180731_B
 
         }
 
-        
+        static int SaisirEntier(string saisie2)
+        {
+            int sortie = int.Parse(saisie2);
+            Console.WriteLine(sortie);
+            return sortie;
 
+
+        }
+
+        static int SaisirEntierCorrige(string textAAfficher)
+        {
+            Console.WriteLine(textAAfficher);
+            return int.Parse(Console.ReadLine());
+        }
 
     }
 }
