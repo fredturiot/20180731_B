@@ -10,6 +10,10 @@ namespace _20180731_B
     {
         static void Main(string[] args)
         {
+            //exemple
+            /*
+            Console.WriteLine(Methode2(2));
+            */
             var test = Methode2(15);
 
             var prenom = PoserQuestion("quel est votre prenom");
@@ -21,7 +25,9 @@ namespace _20180731_B
         
         // methode d'exemple
         static string Methode2(int age)
-        { return (age.ToString() + " ans.");}
+        {
+            return (age.ToString() + " ans.");
+        }
 
 
         static string PoserQuestion(string question)
